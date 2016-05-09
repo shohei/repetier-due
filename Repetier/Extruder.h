@@ -296,7 +296,8 @@ public:
 #define HEATED_BED_INDEX NUM_EXTRUDER
 extern TemperatureController heatedBedController;
 #else
-#define HEATED_BED_INDEX NUM_EXTRUDER-1
+//#define HEATED_BED_INDEX NUM_EXTRUDER-1
+#define HEATED_BED_INDEX 0 //Hard coded for hack
 #endif
 #if FAN_THERMO_PIN > -1
 #define THERMO_CONTROLLER_INDEX HEATED_BED_INDEX+1
