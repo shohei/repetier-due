@@ -61,7 +61,7 @@ To override EEPROM settings with config settings, set EEPROM_MODE 0
 // Alligator Board rev1         = 500
 // Alligator Board rev2         = 501
 
-#define MOTHERBOARD 402
+#define MOTHERBOARD 404
 
 #include "pins.h"
 
