@@ -475,19 +475,19 @@ M140 command, after a given temperature is reached. */
 If you have a lcd display, you can do a filament switch with M600.
 It will change the current extruders filament and temperature must already be high enough.
 */
-#define FILAMENTCHANGE_X_POS 0
-#define FILAMENTCHANGE_Y_POS 0
-#define FILAMENTCHANGE_Z_ADD 1
-/** Does a homing procedure after a filament change. This is good in case
-you moved the extruder while changing filament during print.
-0 = no homing, 1 = xy homing, 2 = xyz homing
-*/
-#define FILAMENTCHANGE_REHOME 1
-/** Will first retract short distance, go to change position and then retract longretract.
-Retractions speeds are taken from RETRACTION_SPEED and RETRACTION_UNDO_SPEED
-*/
-#define FILAMENTCHANGE_SHORTRETRACT 30
-#define FILAMENTCHANGE_LONGRETRACT 30
+// #define FILAMENTCHANGE_X_POS 0
+// #define FILAMENTCHANGE_Y_POS 0
+// #define FILAMENTCHANGE_Z_ADD 1
+// /** Does a homing procedure after a filament change. This is good in case
+// you moved the extruder while changing filament during print.
+// 0 = no homing, 1 = xy homing, 2 = xyz homing
+// */
+// #define FILAMENTCHANGE_REHOME 1
+// /** Will first retract short distance, go to change position and then retract longretract.
+// Retractions speeds are taken from RETRACTION_SPEED and RETRACTION_UNDO_SPEED
+// */
+// #define FILAMENTCHANGE_SHORTRETRACT 30
+// #define FILAMENTCHANGE_LONGRETRACT 30
 
 /* Define how we detect jam/out of filament
    1 = Distance between signal changes increase
