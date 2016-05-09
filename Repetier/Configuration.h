@@ -456,20 +456,20 @@ The precise values may differ for different nozzle/resistor combination.
 
 /** If enabled you can select the distance your filament gets retracted during a
 M140 command, after a given temperature is reached. */
-#define RETRACT_DURING_HEATUP true
+// #define RETRACT_DURING_HEATUP true
 
-/** Allow retraction with G10/G11 removing requirement for retraction setting in slicer. Also allows filament change if lcd is configured. */
-#define FEATURE_RETRACTION 1
-/** auto-retract converts pure extrusion moves into retractions. Beware that 
- simple extrusion e.g. over Repetier-Host will then not work! */
-#define AUTORETRACT_ENABLED 0
-#define RETRACTION_LENGTH 3
-#define RETRACTION_LONG_LENGTH 13
-#define RETRACTION_SPEED 40
-#define RETRACTION_Z_LIFT 0
-#define RETRACTION_UNDO_EXTRA_LENGTH 0
-#define RETRACTION_UNDO_EXTRA_LONG_LENGTH 0
-#define RETRACTION_UNDO_SPEED 20
+// /** Allow retraction with G10/G11 removing requirement for retraction setting in slicer. Also allows filament change if lcd is configured. */
+// #define FEATURE_RETRACTION 1
+// * auto-retract converts pure extrusion moves into retractions. Beware that 
+//  simple extrusion e.g. over Repetier-Host will then not work! 
+// #define AUTORETRACT_ENABLED 0
+// #define RETRACTION_LENGTH 3
+// #define RETRACTION_LONG_LENGTH 13
+// #define RETRACTION_SPEED 40
+// #define RETRACTION_Z_LIFT 0
+// #define RETRACTION_UNDO_EXTRA_LENGTH 0
+// #define RETRACTION_UNDO_EXTRA_LONG_LENGTH 0
+// #define RETRACTION_UNDO_SPEED 20
 
 /**
 If you have a lcd display, you can do a filament switch with M600.

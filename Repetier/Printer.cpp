@@ -1150,7 +1150,7 @@ void Printer::setup()
 #if DELTA_HOME_ON_POWER
     homeAxis(true,true,true);
 #endif
-    setAutoretract(EEPROM_BYTE(AUTORETRACT_ENABLED));
+    // setAutoretract(EEPROM_BYTE(AUTORETRACT_ENABLED));
     Commands::printCurrentPosition(PSTR("Printer::setup "));
 #endif // DRIVE_SYSTEM
     Extruder::selectExtruderById(0);
@@ -1885,8 +1885,8 @@ void Printer::showConfiguration() {
     Com::config(PSTR("XHomeDir:"),X_HOME_DIR);
     Com::config(PSTR("YHomeDir:"),Y_HOME_DIR);
     Com::config(PSTR("ZHomeDir:"),Z_HOME_DIR);
-    Com::config(PSTR("SupportG10G11:"),FEATURE_RETRACTION);
-    Com::config(PSTR("SupportLocalFilamentchange:"),FEATURE_RETRACTION);
+    // Com::config(PSTR("SupportG10G11:"),FEATURE_RETRACTION);
+    // Com::config(PSTR("SupportLocalFilamentchange:"),FEATURE_RETRACTION);
     Com::config(PSTR("CaseLights:"),CASE_LIGHTS_PIN > -1);
     Com::config(PSTR("ZProbe:"),FEATURE_Z_PROBE);
     Com::config(PSTR("Autolevel:"),FEATURE_AUTOLEVEL);
