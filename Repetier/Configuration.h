@@ -816,12 +816,18 @@ on this endstop.
 #define X_ENABLE_ON 0
 #define Y_ENABLE_ON 0
 #define Z_ENABLE_ON 0
+#define XX_ENABLE_ON 0
+#define YY_ENABLE_ON 0
+#define ZZ_ENABLE_ON 0
 
 // Disables axis when it's not being used.
 #define DISABLE_X false
 #define DISABLE_Y false
 #define DISABLE_Z false
 #define DISABLE_E false
+#define DISABLE_XX false
+#define DISABLE_YY false
+#define DISABLE_ZZ false
 /* If you want to keep z motor running on stepper timeout, remove comments below.
   This may be useful if your z bed moves when motors are disabled. Will still
   turn z off when heaters get also disabled. 
@@ -832,12 +838,18 @@ on this endstop.
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
+#define INVERT_XX_DIR false
+#define INVERT_YY_DIR false
+#define INVERT_ZZ_DIR false
 
 //// ENDSTOP SETTINGS:
 // Sets direction of endstops when homing; 1=MAX, -1=MIN
 #define X_HOME_DIR 1
 #define Y_HOME_DIR 1
 #define Z_HOME_DIR 1
+#define XX_HOME_DIR 1
+#define YY_HOME_DIR 1
+#define ZZ_HOME_DIR 1
 
 // Delta robot radius endstop
 #define max_software_endstop_r true
@@ -846,28 +858,40 @@ on this endstop.
 #define min_software_endstop_x false
 #define min_software_endstop_y false
 #define min_software_endstop_z false
+#define min_software_endstop_xx false
+#define min_software_endstop_yy false
+#define min_software_endstop_zz false
 
 //If true, axis won't move to coordinates greater than the defined lengths below.
-#define max_software_endstop_x true
-#define max_software_endstop_y true
-#define max_software_endstop_z true
+#define max_software_endstop_xx true
+#define max_software_endstop_yy true
+#define max_software_endstop_zz true
 
 // If during homing the endstop is reached, ho many mm should the printer move back for the second try
 #define ENDSTOP_X_BACK_MOVE 5
 #define ENDSTOP_Y_BACK_MOVE 5
 #define ENDSTOP_Z_BACK_MOVE 5
+#define ENDSTOP_XX_BACK_MOVE 5
+#define ENDSTOP_YY_BACK_MOVE 5
+#define ENDSTOP_ZZ_BACK_MOVE 5
 
 // For higher precision you can reduce the speed for the second test on the endstop
 // during homing operation. The homing speed is divided by the value. 1 = same speed, 2 = half speed
 #define ENDSTOP_X_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_Y_RETEST_REDUCTION_FACTOR 3
 #define ENDSTOP_Z_RETEST_REDUCTION_FACTOR 3
+#define ENDSTOP_XX_RETEST_REDUCTION_FACTOR 3
+#define ENDSTOP_YY_RETEST_REDUCTION_FACTOR 3
+#define ENDSTOP_ZZ_RETEST_REDUCTION_FACTOR 3
 
 // When you have several endstops in one circuit you need to disable it after homing by moving a
 // small amount back. This is also the case with H-belt systems.
 #define ENDSTOP_X_BACK_ON_HOME 5.0
 #define ENDSTOP_Y_BACK_ON_HOME 5.0
 #define ENDSTOP_Z_BACK_ON_HOME 5.0
+#define ENDSTOP_XX_BACK_ON_HOME 5.0
+#define ENDSTOP_YY_BACK_ON_HOME 5.0
+#define ENDSTOP_ZZ_BACK_ON_HOME 5.0
 
 // You can disable endstop checking for print moves. This is needed, if you get sometimes
 // false signals from your endstops. If your endstops don't give false signals, you
@@ -887,6 +911,9 @@ on this endstop.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
+#define XX_MIN_POS 0
+#define YY_MIN_POS 0
+#define ZZ_MIN_POS 0
 
 // ##########################################################################################
 // ##                           Movement settings                                          ##
