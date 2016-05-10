@@ -878,9 +878,9 @@ on this endstop.
 // For delta robot Z_MAX_LENGTH is the maximum travel of the towers and should be set to the distance between the hotend
 // and the platform when the printer is at its home position.
 // If EEPROM is enabled these values will be overridden with the values in the EEPROM
-#define X_MAX_LENGTH 200
-#define Y_MAX_LENGTH 200
-#define Z_MAX_LENGTH 585.16
+#define X_MAX_LENGTH 556.9
+#define Y_MAX_LENGTH 563.48
+#define Z_MAX_LENGTH 554.6 
 
 // Coordinates for the minimum axis. Can also be negative if you want to have the bed start at 0 and the printer can go to the left side
 // of the bed. Maximum coordinate is given by adding the above X_MAX_LENGTH values.
@@ -909,14 +909,14 @@ on this endstop.
 
 /** \brief Number of segments to generate for delta conversions per second of move
 */
-#define DELTA_SEGMENTS_PER_SECOND_PRINT 600 // Move accurate setting for print moves
-#define DELTA_SEGMENTS_PER_SECOND_MOVE 600 // Less accurate setting for other moves
+#define DELTA_SEGMENTS_PER_SECOND_PRINT 180 // Move accurate setting for print moves
+#define DELTA_SEGMENTS_PER_SECOND_MOVE 70// Less accurate setting for other moves
 
 // Delta settings
 #if DRIVE_SYSTEM == DELTA
 /** \brief Delta rod length (mm)
 */
-#define DELTA_DIAGONAL_ROD 345 // mm
+#define DELTA_DIAGONAL_ROD 330 // mm
 
 
 /*  =========== Parameter essential for delta calibration ===================
@@ -953,7 +953,8 @@ on this endstop.
 #define DELTA_DIAGONAL_CORRECTION_C 0
 
 /** Max. radius (mm) the printer should be able to reach. */
-#define DELTA_MAX_RADIUS 200
+// #define DELTA_MAX_RADIUS 200
+#define DELTA_MAX_RADIUS 180
 
 // Margin (mm) to avoid above tower minimum (xMin xMinsteps)
 // If your printer can put its carriage low enough the rod is horizontal without hitting the floor
@@ -976,7 +977,8 @@ on this endstop.
   measured from the center of the print area to the vertical smooth tower.
   Alternately set this to the pivot to pivot horizontal rod distance, when head is at (0,0)
 */
-#define PRINTER_RADIUS 265.25
+// #define PRINTER_RADIUS 265.25
+#define PRINTER_RADIUS 146.72
 
 /* ========== END Delta calibration data ==============*/
 
@@ -993,10 +995,10 @@ you can also change the values online and autoleveling will store the results he
 
 #endif
 // ========== Tuga special settings =============
-#if DRIVE_SYSTEM==TUGA
+// #if DRIVE_SYSTEM==TUGA
 /* Radius of the long arm in mm. */
-#define DELTA_DIAGONAL_ROD 240
-#endif
+// #define DELTA_DIAGONAL_ROD 240
+// #endif
 
 /** \brief Number of delta moves in each line. Moves that exceed this figure will be split into multiple lines.
 Increasing this figure can use a lot of memory since 7 bytes * size of line buffer * MAX_SELTA_SEGMENTS_PER_LINE
