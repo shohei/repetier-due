@@ -2297,7 +2297,6 @@ int32_t PrintLine::bresenhamStep() // Version for delta printer
         // Set up delta segments
         if (cur->numNonlinearSegments)
         {
-
             // If there are delta segments point to them here
             curd = &cur->segments[--cur->numNonlinearSegments];
             // Enable axis - All axis are enabled since they will most probably all be involved in a move
