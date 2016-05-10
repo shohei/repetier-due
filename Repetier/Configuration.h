@@ -1033,7 +1033,7 @@ Mega. Used only for nonlinear systems like delta or tuga. */
 /** Home position speed in mm/s. Overridden if EEPROM activated. */
 #define HOMING_FEEDRATE_X 80
 #define HOMING_FEEDRATE_Y 80
-#define HOMING_FEEDRATE_Z 3
+#define HOMING_FEEDRATE_Z 80 
 
 /** Set order of axis homing. Use HOME_ORDER_XYZ and replace XYZ with your order. 
  * If you measure Z with your extruder tip you need a hot extruder to get right measurement. In this
