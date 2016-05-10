@@ -641,11 +641,11 @@ bool GCode::parseBinary(uint8_t *buffer,bool fromSerial)
         Z = *(float *)p;
         p += 4;
     }
-    // if(hasE())
-    // {
-    //     E = *(float *)p;
-    //     p += 4;
-    // }
+    if(hasE())
+    {
+        E = *(float *)p;
+        p += 4;
+    }
     if(hasF())
     {
         F = *(float *)p;
@@ -817,13 +817,13 @@ bool GCode::parseAscii(char *line,bool fromSerial)
             params |= 32;
             break;
         }
-        // case 'E':
-        // case 'e':
-        // {
-        //     E = parseFloatValue(pos);
-        //     params |= 64;
-        //     break;
-        // }
+        case 'E':
+        case 'e':
+        {
+            E = parseFloatValue(pos);
+            params |= 64;
+            break;
+        }
         case 'F':
         case 'f':
         {
@@ -1016,10 +1016,10 @@ void GCode::printCommand()
     {
         Com::printF(Com::tZ,Z);
     }
-    // if(hasE())
-    // {
-    //     Com::printF(Com::tE,E,4);
-    // }
+    if(hasE())
+    {
+        Com::printF(Com::tE,E,4);
+    }
     if(hasF())
     {
         Com::printF(Com::tF,F);
