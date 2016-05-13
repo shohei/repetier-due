@@ -72,6 +72,18 @@ typedef struct
     {
         dir &= ~ZSTEP;
     }
+    // inline void setXXMoveFinished()
+    // {
+    //     dir &= ~XXSTEP;
+    // }
+    // inline void setYYMoveFinished()
+    // {
+    //     dir &= ~YYSTEP;
+    // }
+    // inline void setZZMoveFinished()
+    // {
+    //     dir &= ~ZZSTEP;
+    // }
     inline void setXYMoveFinished()
     {
         dir &= ~XY_STEP;
@@ -100,6 +112,30 @@ typedef struct
     {
         return (dir & Z_STEP_DIRPOS) == ZSTEP;
     }
+    // inline bool isXXPositiveMove()
+    // {
+    //     return (dir & XX_STEP_DIRPOS) == XX_STEP_DIRPOS;
+    // }
+    // inline bool isXXNegativeMove()
+    // {
+    //     return (dir & XX_STEP_DIRPOS) == XXSTEP;
+    // }
+    // inline bool isYYPositiveMove()
+    // {
+    //     return (dir & YY_STEP_DIRPOS) == YY_STEP_DIRPOS;
+    // }
+    // inline bool isYYNegativeMove()
+    // {
+    //     return (dir & YY_STEP_DIRPOS) == YYSTEP;
+    // }
+    // inline bool isZZPositiveMove()
+    // {
+    //     return (dir & ZZ_STEP_DIRPOS) == ZZ_STEP_DIRPOS;
+    // }
+    // inline bool isZZNegativeMove()
+    // {
+    //     return (dir & ZZ_STEP_DIRPOS) == ZZSTEP;
+    // }
     inline bool isEPositiveMove()
     {
         return (dir & E_STEP_DIRPOS) == E_STEP_DIRPOS;
@@ -116,6 +152,14 @@ typedef struct
     {
         return (dir & YSTEP);
     }
+    // inline bool isXXMove()
+    // {
+    //     return (dir & XXSTEP);
+    // }
+    // inline bool isYYMove()
+    // {
+    //     return (dir & YYSTEP);
+    // }
     inline bool isXOrYMove()
     {
         return dir & XY_STEP;
@@ -124,6 +168,10 @@ typedef struct
     {
         return (dir & ZSTEP);
     }
+    // inline bool isZZMove()
+    // {
+    //     return (dir & ZZSTEP);
+    // }
     inline bool isEMove()
     {
         return (dir & ESTEP);
@@ -182,6 +230,9 @@ private:
     float speedX;                   ///< Speed in x direction at fullInterval in mm/s
     float speedY;                   ///< Speed in y direction at fullInterval in mm/s
     float speedZ;                   ///< Speed in z direction at fullInterval in mm/s
+    // float speedXX;                   ///< Speed in x direction at fullInterval in mm/s
+    // float speedYY;                   ///< Speed in y direction at fullInterval in mm/s
+    // float speedZZ;                   ///< Speed in z direction at fullInterval in mm/s
     float speedE;                   ///< Speed in E direction at fullInterval in mm/s
     float fullSpeed;                ///< Desired speed mm/s
     float invFullSpeed;             ///< 1.0/fullSpeed for faster computation
@@ -348,7 +399,7 @@ public:
 #elif DRIVE_SYSTEM==XZ_GANTRY || DRIVE_SYSTEM==ZX_GANTRY		
 		dir &= ~80
 #else
-        dir &= ~16;
+        dir &= ~16;//0x16=0b00001111; ~0x16=0b11110000;
 #endif
     }
     inline void setYMoveFinished()
@@ -356,7 +407,7 @@ public:
 #if DRIVE_SYSTEM==XY_GANTRY || DRIVE_SYSTEM==YX_GANTRY
         dir &= ~48;
 #else
-        dir &= ~32;
+        dir &= ~32;//0x32=0b00011111; ~0x32=0b11100000;
 #endif
     }
     inline void setZMoveFinished()
@@ -364,7 +415,7 @@ public:
 #if DRIVE_SYSTEM==XZ_GANTRY || DRIVE_SYSTEM==ZX_GANTRY		
 		dir &= ~80
 #else		
-        dir &= ~64;
+        dir &= ~64;//0x64=0b00111111; ~0x64=0b11000000;
 #endif		
     }
     inline void setXYMoveFinished()

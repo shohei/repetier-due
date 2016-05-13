@@ -2291,7 +2291,7 @@ int32_t PrintLine::bresenhamStep() // Version for delta printer
 #endif
 
         if(cur->isEMove()) {
-			Extruder::enable();
+			// Extruder::enable();
 		}
         cur->fixStartAndEndSpeed();
         // Set up delta segments
@@ -2332,7 +2332,7 @@ int32_t PrintLine::bresenhamStep() // Version for delta printer
 #if USE_ADVANCE
 		if(!Printer::isAdvanceActivated()) // Set direction if no advance/OPS enabled
 #endif
-			Extruder::setDirection(cur->isEPositiveMove());
+			// Extruder::setDirection(cur->isEPositiveMove());
 #if defined(DIRECTION_DELAY) && DIRECTION_DELAY > 0
         // HAL::delayMicroseconds(DIRECTION_DELAY); // We leave interrupt without step so no delay needed here
 #endif
@@ -2407,7 +2407,7 @@ int32_t PrintLine::bresenhamStep() // Version for delta printer
             }
             else
 #endif
-                Extruder::step();
+                // Extruder::step();
             cur->error[E_AXIS] += cur_errupd;
         }
         if (curd)
@@ -2460,7 +2460,8 @@ int32_t PrintLine::bresenhamStep() // Version for delta printer
 #if USE_ADVANCE
 				if(!Printer::isAdvanceActivated()) // Use interrupt for movement
 #endif
-					Extruder::unstep();
+					// Extruder::unstep();
+                    __asm__ __volatile__ ("nop"); 
 #if CPU_ARCH != ARCH_AVR
 			}
 #endif
@@ -2601,7 +2602,8 @@ int32_t PrintLine::bresenhamStep() // Version for delta printer
 #if USE_ADVANCE
     if(!Printer::isAdvanceActivated()) // Use interrupt for movement
 #endif
-        Extruder::unstep();
+        // Extruder::unstep();
+       __asm__ __volatile__ ("nop");  
 #endif
     return Printer::interval;
 }
